@@ -1,0 +1,48 @@
+site:
+  title: ThoughtSpot Beta Documentation
+  url: https://beta-docs.thoughtspot.com
+  start_page: home::index.adoc
+  keys:
+    google_analytics: UA-44946579-2
+content:
+  sources:
+  # embedding empty credentials in the URL disables the Edit this Page link for any page created from this repository
+  - url: .
+    branches: HEAD
+    start_path: home
+  - url: git@github.com:thoughtspot/thoughtspot-docs.git
+  # Software docs branches
+    branches: ['8.8.0.sw']
+    start_path: software/
+  - url: git@github.com:thoughtspot/thoughtspot-docs.git
+urls:
+  latest_version_segment_strategy: redirect:to
+  latest_version_segment: latest
+  html_extension_style: drop
+ui:
+  bundle:
+    # url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/master/raw/build/ui-bundle.zip?job=bundle-stable
+    url: ui-bundle/ui2-bundle.zip
+  supplemental_files:
+  - path: .nojekyll
+  - path: ui.yml
+    contents: "static_files: [ .nojekyll ]"
+    snapshot: true
+asciidoc:
+  attributes:
+    #software: true
+    #cloud: false
+    page-company: ThoughtSpot
+    tabs: tabs
+    support-url: https://community.thoughtspot.com/customers/s/contactsupport[ThoughtSpot Support^]
+    cl-subscription-agreement: https://www.thoughtspot.com/legal/thoughtspot-cloud-subscription-agreement[subscription agreement^]
+  extensions:
+  - ./lib/asciidoctor-performance-patch.js
+  - "@djencks/asciidoctor-tabset-block"
+output:
+  clean: true
+  dir: build/
+runtime:
+  fetch: true
+  log:
+    level: error
