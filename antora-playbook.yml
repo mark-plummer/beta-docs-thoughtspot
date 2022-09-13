@@ -1,7 +1,6 @@
 site:
   title: ThoughtSpot Beta Documentation
   url: https://beta-docs-thoughtspot.netlify.app
-  start_page: home::index.adoc
   keys:
     google_analytics: UA-44946579-2
 content:
