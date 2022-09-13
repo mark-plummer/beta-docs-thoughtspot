@@ -14,6 +14,16 @@
     margin: 1rem 0 0;
 }
 
+h2#_whats_new_in_thoughtspot_cloud {
+    font-weight: 450;
+    font-size: larger;
+}
+
+h3#_previous_releases_cloud {
+    font-weight: 300;
+    font-size: medium;
+}
+
 .dlist dt {
     font-style: normal !important;
 }
